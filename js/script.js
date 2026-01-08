@@ -32,17 +32,17 @@ function addTodo(e) {
     </div>
   `;
 
-  /* ✔ SELESAI */
+  /* SELESAI */
   li.querySelector(".check").addEventListener("click", () => {
     li.classList.toggle("completed");
   });
 
-  /* ✖ BATAL SELESAI */
+  /* BATAL SELESAI */
   li.querySelector(".delete").addEventListener("click", () => {
     li.classList.remove("completed");
   });
 
-  /* 🗑 HAPUS TODO */
+  /* HAPUS TODO */
   li.querySelector(".trash").addEventListener("click", () => {
     li.remove();
 
