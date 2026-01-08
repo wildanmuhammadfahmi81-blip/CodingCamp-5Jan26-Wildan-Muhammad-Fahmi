@@ -1,0 +1,261 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(
+    -45deg,
+    #667eea,
+    #764ba2,
+    #6a11cb,
+    #2575fc
+  );
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card utama */
+.container {
+  background: rgba(255, 255, 255, 0.95);
+  width: 360px;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Judul */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #4a4a4a;
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input, select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 14px;
+}
+
+input:focus {
+  border-color: #667eea;
+}
+
+/* Button tambah */
+button {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Filter */
+#filter {
+  margin-top: 15px;
+}
+
+/* List */
+ul {
+  list-style: none;
+  margin-top: 15px;
+}
+
+/* Item To-Do */
+li {
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: fadeIn 0.4s ease;
+}
+
+li span {
+  font-size: 14px;
+  color: #333;
+}
+
+li small {
+  color: #777;
+}
+
+/* Tombol hapus */
+.delete {
+  background: #ff5f5f;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.delete:hover {
+  background: #e04848;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: float 10s infinite alternate;
+}
+
+body::before {
+  top: 10%;
+  left: 10%;
+}
+
+body::after {
+  bottom: 10%;
+  right: 10%;
+  animation-delay: 3s;
+}
+
+.container {
+  position: relative;
+  z-index: 10;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(0) translateX(0);
+  }
+  to {
+    transform: translateY(-40px) translateX(30px);
+  }
+}
+
+/* Animasi */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#todo-list {
+  margin-top: 20px;
+}
+
+li {
+  animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== ACTION BUTTONS FIX ===== */
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+/* SEMUA ICON BUTTON */
+.check,
+.delete,
+.trash {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* CHECK */
+.check {
+  background: #e7f9ef;
+  color: #2ecc71;
+}
+
+.check:hover {
+  background: #2ecc71;
+  color: #fff;
+  transform: scale(1.12);
+}
+
+/* X */
+.delete {
+  background: #fdecea;
+  color: #e74c3c;
+}
+
+.delete:hover {
+  background: #e74c3c;
+  color: #fff;
+  transform: scale(1.12);
+}
+
+/* SAMPAH */
+.trash {
+  background: linear-gradient(135deg, #000000, #000000);
+  color: white;
+  font-size: 16px; /* KUNCI RAPIH */
+}
+
+.trash:hover {
+  transform: scale(1.12);
+  box-shadow: 0 6px 15px rgba(106, 90, 205, 0.4);
+}
